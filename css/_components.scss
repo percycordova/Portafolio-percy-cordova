@@ -1,0 +1,505 @@
+/* ********** Contact Form ********** */
+
+.contact-cards {
+
+    .contact-card * {
+        // border: 1px solid black;
+        margin: 0.3rem 0;
+        color: white;
+        //font-weight: bold;
+    }
+
+    .contact-card {
+        //border: 1px solid black;
+        //background-image: radial-gradient(circle at 26.37% 41.4%, #8dffff 0, #5288cc 50%, #161e2d 100%);
+        background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+        margin-bottom: 1rem;
+        padding: 0rem 1rem;
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        div {
+            display: flex;
+            align-items: center;
+
+            h5 {
+                margin-left: 1rem;
+            }
+        }
+
+        small {
+            a {
+                font-size: 0.8rem;
+                display: block;
+            }
+
+            a:hover {
+
+                opacity: 1;
+                transform: translate(0.6rem);
+
+            }
+        }
+
+        &:nth-child(4) {
+            small {
+
+                a {
+                    display: inline-block;
+                    // border: 1px solid black;
+                    padding-bottom: 0.5rem;
+                    margin-right: 0.5rem;
+
+                }
+
+                a:hover {
+                    transform: translate(0, -.5rem);
+
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.contact-form {
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 800px;
+
+}
+
+.contact-form>* {
+    padding: 0.5rem;
+    margin: 1rem auto;
+    display: block;
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-size: 0.85rem;
+    font-family: $font;
+}
+
+.contact-form input {
+    border: 0;
+    padding-left: 0;
+    border-bottom: thin solid $gray-dark-color;
+}
+
+.contact-form textarea {
+    border: thin solid $gray-dark-color;
+    resize: none;
+}
+
+.contact-form input[type="submit"] {
+    margin-top: 0;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+.contact-form input[type="submit"]:hover {
+    opacity: 0.75;
+}
+
+.contact-form *::placeholder {
+    color: $gray-dark-color;
+}
+
+.contact-form-response {
+    padding: 1rem;
+    width: 400px;
+    text-align: center;
+    background-color: $white-color;
+}
+
+.contact-form-response svg {
+    margin-top: 2rem;
+    width: 4rem;
+    height: 4rem;
+    fill: $first-color;
+}
+
+.modal-contact {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-alpha-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s;
+}
+
+
+
+.modal-contact#gracias:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .contact-cards {
+        .contact-card {
+            div{
+                h5{
+                    font-size: 1.2rem;
+                }
+            }
+            small {
+                font-size: 1rem;
+
+                a {
+                    //border: 1px solid white;
+                    font-size: 0.9rem;
+                    letter-spacing: 0.1rem;
+                }
+            }
+        }
+    }
+
+
+
+    .contact-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1rem;
+    }
+
+    .contact-form textarea,
+    .contact-form-loader {
+        grid-column: span 2;
+    }
+
+    .contact-form input[type="submit"] {
+        margin-left: 0;
+    }
+}
+
+/*************************HeroImg***********/
+.hero-img {
+    background-image: var(--image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: var(--hero-att);
+
+    .hero-img-opacity {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: var(--hero-opacity-color);
+
+        .hero-img-content {
+            .hero-img-title {
+
+                font-size: 7.5vw;
+                color: var(--hero-text-color);
+            }
+        }
+    }
+
+
+}
+
+
+
+/*************************Menu**************/
+.menu-btn {
+    outline: thin solid $white-color;
+    background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+    // background-color: $second-color;
+    border: 0;
+    cursor: pointer;
+
+
+    svg {
+        fill: $white-color;
+    }
+}
+
+.menu {
+    position: fixed;
+    left: 0;
+    bottom: $header-height;
+    width: 100%;
+    // background-color: $second-color;
+    //background-color: #ffffff;
+    background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+
+    a {
+        padding: 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        //color: $first-color;
+        color: $white-color;
+
+    }
+
+    a:hover {
+        color: $white-color;
+        //background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+        //background: $first-color;
+        background-color: #001028;
+    }
+}
+
+.menu.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+@media screen and(min-width:1024px) {
+    .menu-btn {
+        display: none;
+    }
+
+    .menu {
+        position: static;
+        width: auto;
+        flex-direction: row;
+        opacity: 1;
+        pointer-events: auto;
+        background-image: none;
+
+        a {
+            display: block;
+            padding: 0 1rem;
+            font-size: 1.4rem;
+            border-bottom: 0.2rem solid #ffffff;
+            color: #323232;
+
+            &:hover {
+                background: transparent;
+                color: #3b6caa;
+                border-bottom: 0.2rem solid #3b6caa;
+            }
+
+            &:last-child {
+                padding-right: 0.3rem;
+            }
+        }
+
+    }
+}
+
+/*********************Modal****************/
+.modal {
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $black-alpha-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s;
+
+
+    .modal-content {
+        position: relative;
+        max-height: 100vh;
+
+        .modal-close {
+            position: absolute;
+            top: 0.2rem;
+            right: 1rem;
+
+            svg {
+                width: 3rem;
+                height: 3rem;
+                fill: $first-color;
+
+            }
+        }
+    }
+}
+
+/**al ponerlo todo junto se que estan en el mismo div y que en se div hay una clase modal y al la vez un id trabajo-1, es como si hubiera puesto solo #trabajo 1*/
+.open-modal {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.close-modal-close {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+
+/****************ScrollTopBtn***********************/
+
+.scroll-top-btn {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0.7rem;
+    right: 25vw;
+    //right: calc(4.25rem + 1vw);
+    // width: 3rem;
+    //height: 3rem;
+    //border-radius: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+    //background-image: radial-gradient(circle at 52.24% 24.41%, #ff02cc 0, #e90dc9 16.67%, #ce14c3 33.33%, #b117bb 50%, #9419b2 66.67%, #791ba8 83.33%, #5e1ca0 100%);
+    //color: white;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    transition: all 0.3s ease-out;
+
+    img {
+        width: 40px;
+    }
+
+}
+
+.scroll-top-btn:hover {
+    //background-image: linear-gradient(180deg, #f990ff 0, #a974ff 25%, #5353f2 50%, #0033b2 75%, #001979 100%);
+
+    opacity: 1;
+    transform: translateY(-0.3rem);
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media screen and (min-width:768px) {
+    .scroll-top-btn {
+        bottom: 0rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 2.7rem;
+    }
+
+}
+
+@media screen and (min-width:1024px) {
+    .scroll-top-btn {
+        bottom: 10vh;
+        right: 1.5vw;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+        //background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 3rem;
+        }
+    }
+
+}
+
+/*************************ProgressBar*************/
+
+progress {
+
+    width: 100%;
+    height: 1rem;
+    background-color: $gray-color;
+    border-radius: 2rem;
+}
+
+progress ::-webkit-progress-bar {
+    border-radius: 2rem;
+    background-color: $gray-color;
+}
+
+progress ::-webkit-progress-value {
+    background-color: $gray-dark-color;
+}
+
+progress::-moz-progress-bar {
+    border-radius: 2rem;
+    background-color: $gray-dark-color;
+}
+
+.progress {
+    margin: 1rem 1rem;
+
+    p {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+    }
+
+    p>b:last-child {
+        //  background-image: linear-gradient(135deg, #00ffff 0, #00ffff 16.67%, #00e1ff 33.33%, #0cc1ed 50%, #2fa3ca 66.67%, #3987a9 83.33%, #3b708c 100%);
+        color: #080808c4;
+        font-weight: bold;
+
+    }
+
+    p>b:first-child {
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+}
+
+/***********************************************Whassapt**********************************/
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 70vh;
+    right: 1vw;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 3rem;
+    box-shadow: 1px 1px 1px white;
+    z-index: 100;
+    transition: all 0.5 ease;
+}
+
+.float:hover {
+    text-decoration: none;
+    color: #25d366;
+    background-color: transparent;
+}
+
+.my-float {
+    margin-top: 0.4rem;
+    margin-left: 0.2rem;
+}

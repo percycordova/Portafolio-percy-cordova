@@ -1,0 +1,143 @@
+@media screen and(min-width:576px) {
+
+    /******************************Portfolio**************/
+    .portfolio {
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-gap: 0.5rem;
+
+            .portfolio-card {
+                min-height: 380px;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+
+
+}
+
+
+@media screen and(min-width:768px) {
+
+    /*****************************Hobbies****************/
+    .hobbies div {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        article {
+            width: 49%;
+            margin-top: 1rem;
+            padding: 0.5rem;
+
+            &:last-child {
+                div {
+
+                    video {
+                        border-left: 2rem solid black;
+                        border-right: 2rem solid black;
+                    }
+                }
+
+            }
+        }
+    }
+
+    /*******************************Services****************/
+
+    .services .container {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+
+        article {
+            width: 30%;
+        }
+    }
+
+    /****************************Portfolio*******************/
+    .portfolio {
+        .portfolio-grid {
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-gap: 0.5rem;
+        }
+    }
+
+    .portfolio-modal {
+        max-width: 800px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+
+        img {
+            margin: auto;
+            min-height: 300px;
+            max-width: 40%;
+        }
+
+        .portfolio-info {
+            margin-left: 1rem;
+        }
+    }
+
+    /************************************contact**********************/
+
+
+    .contact-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        justify-content: space-between;
+
+    }
+
+}
+
+@media screen and(min-width:1024px) {
+
+    /**********************************About****************/
+    .about {
+        display: grid;
+        grid-template-columns: repeat(3, 30%);
+        justify-content: space-between;
+        align-content: center; //alineacion en el eje y
+    }
+
+    /*********************************Header**************/
+    .header {
+        position: sticky;
+        top: 0px;
+        padding: 0.5rem;
+        height: calc(#{$header-height} - 0.5rem);
+       // background-color: $second-color;
+        background-color: #ffffff;
+        background-image: none;
+        
+        .container {
+
+            .logo {
+                a {
+                    //color: $first-color;
+                    color: #3b6caa;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+
+    /***************************contac***********************/
+    .contact-cards {
+        grid-template-columns: repeat(4, 24%);
+    }
+
+
+
+}

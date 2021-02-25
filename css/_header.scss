@@ -1,0 +1,29 @@
+.header {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height;
+    //background-color: $second-color;
+    background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+    padding: 1rem;
+    z-index: 999;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+                font-size: 1.6rem;
+            }
+       
+            
+        }
+    }
+}
+

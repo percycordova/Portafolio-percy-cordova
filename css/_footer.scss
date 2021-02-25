@@ -1,0 +1,29 @@
+footer {
+    position: relative;
+    bottom: 4rem;
+    background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+    small
+    {
+        a{
+            text-decoration: none;
+            &:hover{
+                color:  white;
+                opacity: 1;
+            }
+        }
+    } 
+    }
+    @media screen and (min-width:1024px){
+           footer{
+               bottom: 0;
+               font-size: 2rem;
+           }
+
+
+
+    }

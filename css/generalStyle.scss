@@ -1,0 +1,47 @@
+@import "variables";
+
+/******************* Custom Properties *******************/
+:root {
+    --first-color: #d90062;
+    --first-alpha-color: rgba(217, 0, 98, 0.75);
+    --second-color: #14192d;
+    --second-alpha-color: rgba(20, 25, 45, 0.75);
+    --third-color: #501464;
+    --third-alpha-color: rgba(80, 20, 100, 0.75);
+    --white-color: #fff;
+    --white-alpha-color: rgba(255, 255, 255, 0.5);
+    --gray-color: #ccc;
+    --gray-light-color: #f3f3f3;
+    --gray-dark-color: #666;
+    --black-color: #000;
+    --black-alpha-color: rgba(0, 0, 0, 0.5);
+    --link-color: #509ee3;
+    --title-color: #333;
+    --text-color: #222;
+    --font: "Raleway",
+        sans-serif;
+    --max-width: 1200px;
+    --header-height: 4rem;
+}
+
+/**************************Reset******************************/
+@import "reset";
+/*************************Components***********************/
+@import "components";
+/*************************Utilitles************************/
+@import "utilitles";
+/*------------------------Site Styles---------------------*/
+/*************************Header***************************/
+@import "header";
+/************************About*****************************/
+@import "about";
+/***********************Hobbies***************************/
+@import "hobbies";
+/**********************Services***************************/
+@import "services";
+/**********************Portfolio**************************/
+@import "portfolio";
+/* ********** Footer ********** */
+@import "footer";
+/************************MediaQueries**********************/
+@import "mediaQueries";

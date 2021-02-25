@@ -1,0 +1,87 @@
+.portfolio-card {
+    position: relative;
+    width: 100%;
+    //min-height: 340px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 0.5rem;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    //Cuncado haga hover en portfolio-card va aplicar los cambios en portfolio-card-inf
+    &:hover .portfolio-card-info {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .portfolio-card-info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        //border: black 2px solid;
+        //width: 100%;
+        //height: 100%;
+        padding: 1rem;
+        background-color: $first-alpha-color;
+        color: $white-color;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .5s ease-in-out;
+
+        div {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            border: thin solid $white-color;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+/********************************Estilos para mi modal******/
+.portfolio-modal {
+    padding: 1rem;
+    max-width: 400px;
+    background-color: $white-color;
+    display: flex;
+    flex-direction: column;
+    img{
+        max-height: 250px;
+        width: auto;
+    }
+
+    
+    h3 {
+        border-bottom: medium solid $first-color;
+        margin: 1rem auto;
+        padding: .5rem 0;
+        color: $title-color;
+        text-align: center;
+    }
+
+    .portfolio-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    .portfolio-details {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: repeat(4,1fr);
+        grid-gap: 1.5rem;
+        
+    }
+}

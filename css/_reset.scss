@@ -1,0 +1,72 @@
+html {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: $font;
+    font-size: 16px;
+    scroll-behavior: smooth; //suavizar el scroll
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; //evita la barra de desplazamiento horrible de x
+    color: $text-color;
+}
+
+
+a {
+    color: $link-color;
+    transition: all 0.5s ease-out;
+}
+
+a:hover {
+    opacity: 0.75;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+h5 {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+h6 {
+    margin: 0;
+    font-size: 0.7rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+   object-fit: cover;
+}
+
+p {
+    line-height: 1.6;
+}

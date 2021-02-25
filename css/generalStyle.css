@@ -1,0 +1,873 @@
+/******************* Custom Properties *******************/
+:root {
+  --first-color: #d90062;
+  --first-alpha-color: rgba(217, 0, 98, 0.75);
+  --second-color: #14192d;
+  --second-alpha-color: rgba(20, 25, 45, 0.75);
+  --third-color: #501464;
+  --third-alpha-color: rgba(80, 20, 100, 0.75);
+  --white-color: #fff;
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --gray-color: #ccc;
+  --gray-light-color: #f3f3f3;
+  --gray-dark-color: #666;
+  --black-color: #000;
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  --link-color: #509ee3;
+  --title-color: #333;
+  --text-color: #222;
+  --font: "Raleway",
+      sans-serif;
+  --max-width: 1200px;
+  --header-height: 4rem;
+}
+
+/**************************Reset******************************/
+html {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Raleway", s sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  color: #222;
+}
+
+a {
+  color: #509ee3;
+  transition: all 0.5s ease-out;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/*************************Components***********************/
+/* ********** Contact Form ********** */
+.contact-cards .contact-card * {
+  margin: 0.3rem 0;
+  color: white;
+}
+.contact-cards .contact-card {
+  background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+  margin-bottom: 1rem;
+  padding: 0rem 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-cards .contact-card div {
+  display: flex;
+  align-items: center;
+}
+.contact-cards .contact-card div h5 {
+  margin-left: 1rem;
+}
+.contact-cards .contact-card small a {
+  font-size: 0.8rem;
+  display: block;
+}
+.contact-cards .contact-card small a:hover {
+  opacity: 1;
+  transform: translate(0.6rem);
+}
+.contact-cards .contact-card:nth-child(4) small a {
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  margin-right: 0.5rem;
+}
+.contact-cards .contact-card:nth-child(4) small a:hover {
+  transform: translate(0, -0.5rem);
+}
+
+.contact-form {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 800px;
+}
+
+.contact-form > * {
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 0.85rem;
+  font-family: "Raleway", s sans-serif;
+}
+
+.contact-form input {
+  border: 0;
+  padding-left: 0;
+  border-bottom: thin solid #666;
+}
+
+.contact-form textarea {
+  border: thin solid #666;
+  resize: none;
+}
+
+.contact-form input[type=submit] {
+  margin-top: 0;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.contact-form input[type=submit]:hover {
+  opacity: 0.75;
+}
+
+.contact-form *::placeholder {
+  color: #666;
+}
+
+.contact-form-response {
+  padding: 1rem;
+  width: 400px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.contact-form-response svg {
+  margin-top: 2rem;
+  width: 4rem;
+  height: 4rem;
+  fill: #3b6caa;
+}
+
+.modal-contact {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-alpha-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s;
+}
+
+.modal-contact#gracias:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .contact-cards .contact-card div h5 {
+    font-size: 1.2rem;
+  }
+  .contact-cards .contact-card small {
+    font-size: 1rem;
+  }
+  .contact-cards .contact-card small a {
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+  }
+
+  .contact-form input,
+.contact-form textarea {
+    font-size: 1rem;
+  }
+
+  .contact-form textarea,
+.contact-form-loader {
+    grid-column: span 2;
+  }
+
+  .contact-form input[type=submit] {
+    margin-left: 0;
+  }
+}
+/*************************HeroImg***********/
+.hero-img {
+  background-image: var(--image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: var(--hero-att);
+}
+.hero-img .hero-img-opacity {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--hero-opacity-color);
+}
+.hero-img .hero-img-opacity .hero-img-content .hero-img-title {
+  font-size: 7.5vw;
+  color: var(--hero-text-color);
+}
+
+/*************************Menu**************/
+.menu-btn {
+  outline: thin solid #fff;
+  background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+  border: 0;
+  cursor: pointer;
+}
+.menu-btn svg {
+  fill: #fff;
+}
+
+.menu {
+  position: fixed;
+  left: 0;
+  bottom: 4rem;
+  width: 100%;
+  background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+}
+.menu a {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
+.menu a:hover {
+  color: #fff;
+  background-color: #001028;
+}
+
+.menu.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .menu-btn {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    flex-direction: row;
+    opacity: 1;
+    pointer-events: auto;
+    background-image: none;
+  }
+  .menu a {
+    display: block;
+    padding: 0 1rem;
+    font-size: 1.4rem;
+    border-bottom: 0.2rem solid #ffffff;
+    color: #323232;
+  }
+  .menu a:hover {
+    background: transparent;
+    color: #3b6caa;
+    border-bottom: 0.2rem solid #3b6caa;
+  }
+  .menu a:last-child {
+    padding-right: 0.3rem;
+  }
+}
+/*********************Modal****************/
+.modal {
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s;
+}
+.modal .modal-content {
+  position: relative;
+  max-height: 100vh;
+}
+.modal .modal-content .modal-close {
+  position: absolute;
+  top: 0.2rem;
+  right: 1rem;
+}
+.modal .modal-content .modal-close svg {
+  width: 3rem;
+  height: 3rem;
+  fill: #3b6caa;
+}
+
+/**al ponerlo todo junto se que estan en el mismo div y que en se div hay una clase modal y al la vez un id trabajo-1, es como si hubiera puesto solo #trabajo 1*/
+.open-modal {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.close-modal-close {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/****************ScrollTopBtn***********************/
+.scroll-top-btn {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  bottom: 0.7rem;
+  right: 25vw;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  transition: all 0.3s ease-out;
+}
+.scroll-top-btn img {
+  width: 40px;
+}
+
+.scroll-top-btn:hover {
+  opacity: 1;
+  transform: translateY(-0.3rem);
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .scroll-top-btn {
+    bottom: 0rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 2.7rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .scroll-top-btn {
+    bottom: 10vh;
+    right: 1.5vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .scroll-top-btn img {
+    width: 3rem;
+  }
+}
+/*************************ProgressBar*************/
+progress {
+  width: 100%;
+  height: 1rem;
+  background-color: #ccc;
+  border-radius: 2rem;
+}
+
+progress ::-webkit-progress-bar {
+  border-radius: 2rem;
+  background-color: #ccc;
+}
+
+progress ::-webkit-progress-value {
+  background-color: #666;
+}
+
+progress::-moz-progress-bar {
+  border-radius: 2rem;
+  background-color: #666;
+}
+
+.progress {
+  margin: 1rem 1rem;
+}
+.progress p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+.progress p > b:last-child {
+  color: #080808c4;
+  font-weight: bold;
+}
+.progress p > b:first-child {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/***********************************************Whassapt**********************************/
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 70vh;
+  right: 1vw;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 3rem;
+  box-shadow: 1px 1px 1px white;
+  z-index: 100;
+  transition: all 0.5 ease;
+}
+
+.float:hover {
+  text-decoration: none;
+  color: #25d366;
+  background-color: transparent;
+}
+
+.my-float {
+  margin-top: 0.4rem;
+  margin-left: 0.2rem;
+}
+
+/*************************Utilitles************************/
+.box-shadow-1 {
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.bg-gray-light {
+  background-color: #f3f3f3;
+}
+
+.btn {
+  margin-top: 1rem;
+  border-radius: 3.5rem;
+  padding: 1rem;
+  display: inline-block;
+  width: 200px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+}
+.btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  font-weight: bold;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+.gray-scale {
+  filter: grayscale(1);
+}
+
+.none {
+  display: none;
+}
+
+.section {
+  padding: 2rem 1rem;
+}
+
+.section-title {
+  border-top: thin solid #3b6caa;
+  border-bottom: thin solid #3b6caa;
+  margin: 2.5rem auto;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  color: #3b6caa;
+  width: 320px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+@media screen and (min-width: 1024px) {
+  .full-lg-screen-100 {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .text-lg-left {
+    text-align: left;
+  }
+
+  .text-lg-center {
+    text-align: center;
+  }
+
+  .text-lg-right {
+    text-align: right;
+  }
+}
+/*------------------------Site Styles---------------------*/
+/*************************Header***************************/
+.header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+  padding: 1rem;
+  z-index: 999;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .container .logo a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+/************************About*****************************/
+.img-percy {
+  width: 100%;
+  display: block;
+  max-width: 600px;
+  object-fit: cover;
+  margin: 0rem auto;
+}
+
+.about > article {
+  margin-bottom: 2rem;
+}
+
+/***********************Hobbies***************************/
+.hobbies div {
+  display: flex;
+  flex-direction: column;
+}
+.hobbies div article {
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+.hobbies div article object {
+  height: 30px;
+  width: 30px;
+  margin-right: 1rem;
+}
+.hobbies div article:first-child ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.hobbies div article:first-child ul li {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+}
+.hobbies div article:last-child p {
+  margin-left: 1rem;
+}
+.hobbies div article:last-child div {
+  max-width: 600px;
+  margin: 1rem auto;
+}
+.hobbies div article:last-child div video {
+  width: 100%;
+  max-width: 600px;
+}
+
+/**********************Services***************************/
+.services .service-card {
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+.services .service-card object {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1.25rem;
+}
+
+/**********************Portfolio**************************/
+.portfolio-card {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.portfolio-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portfolio-card:hover .portfolio-card-info {
+  opacity: 1;
+  pointer-events: auto;
+}
+.portfolio-card .portfolio-card-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  background-color: rgba(217, 0, 98, 0.75);
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+.portfolio-card .portfolio-card-info div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border: thin solid #fff;
+  width: 100%;
+  height: 100%;
+}
+
+/********************************Estilos para mi modal******/
+.portfolio-modal {
+  padding: 1rem;
+  max-width: 400px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-modal img {
+  max-height: 250px;
+  width: auto;
+}
+.portfolio-modal h3 {
+  border-bottom: medium solid #3b6caa;
+  margin: 1rem auto;
+  padding: 0.5rem 0;
+  color: #333;
+  text-align: center;
+}
+.portfolio-modal .portfolio-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.portfolio-modal .portfolio-details {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+}
+
+/* ********** Footer ********** */
+footer {
+  position: relative;
+  bottom: 4rem;
+  background-image: radial-gradient(circle at 12.52% 50%, #2a4c8a 0, #001431 50%, #000000 100%);
+  height: 5rem;
+  line-height: 5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+}
+footer small a {
+  text-decoration: none;
+}
+footer small a:hover {
+  color: white;
+  opacity: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  footer {
+    bottom: 0;
+    font-size: 2rem;
+  }
+}
+/************************MediaQueries**********************/
+@media screen and (min-width: 576px) {
+  /******************************Portfolio**************/
+  .portfolio .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0.5rem;
+  }
+  .portfolio .portfolio-grid .portfolio-card {
+    min-height: 380px;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  /*****************************Hobbies****************/
+  .hobbies div {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .hobbies div article {
+    width: 49%;
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
+  .hobbies div article:last-child div video {
+    border-left: 2rem solid black;
+    border-right: 2rem solid black;
+  }
+
+  /*******************************Services****************/
+  .services .container {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+  }
+  .services .container article {
+    width: 30%;
+  }
+
+  /****************************Portfolio*******************/
+  .portfolio .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 0.5rem;
+  }
+
+  .portfolio-modal {
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .portfolio-modal img {
+    margin: auto;
+    min-height: 300px;
+    max-width: 40%;
+  }
+  .portfolio-modal .portfolio-info {
+    margin-left: 1rem;
+  }
+
+  /************************************contact**********************/
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1024px) {
+  /**********************************About****************/
+  .about {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  /*********************************Header**************/
+  .header {
+    position: sticky;
+    top: 0px;
+    padding: 0.5rem;
+    height: calc(4rem - 0.5rem);
+    background-color: #ffffff;
+    background-image: none;
+  }
+  .header .container .logo a {
+    color: #3b6caa;
+    font-size: 2rem;
+  }
+
+  /***************************contac***********************/
+  .contact-cards {
+    grid-template-columns: repeat(4, 24%);
+  }
+}
+
+/*# sourceMappingURL=generalStyle.css.map */
