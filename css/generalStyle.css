@@ -129,6 +129,7 @@ p {
   display: inline-block;
   padding-bottom: 0.5rem;
   margin-right: 0.5rem;
+  
 }
 .contact-cards .contact-card:nth-child(4) small a:hover {
   transform: translate(0, -0.5rem);
@@ -693,7 +694,7 @@ progress::-moz-progress-bar {
   right: 0;
   bottom: 0;
   padding: 1rem;
-  background-color: rgba(217, 0, 98, 0.75);
+  background-image: radial-gradient(circle at 12.52% 50%, #002a79 0, #001431 50%, #000000 100%);
   color: #fff;
   opacity: 0;
   pointer-events: none;
