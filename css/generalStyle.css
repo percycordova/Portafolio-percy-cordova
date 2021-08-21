@@ -346,7 +346,7 @@ p {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -674,13 +674,15 @@ progress::-moz-progress-bar {
 .portfolio-card {
   position: relative;
   width: 100%;
-  margin: 0 auto;
   display: block;
   margin-bottom: 0.5rem;
+  border: 1px solid #3b6caa;
 }
 .portfolio-card img {
   width: 100%;
   height: 100%;
+  min-height: 400px;
+  min-width: 200px;
   object-fit: cover;
 }
 .portfolio-card:hover .portfolio-card-info {
@@ -694,18 +696,30 @@ progress::-moz-progress-bar {
   right: 0;
   bottom: 0;
   padding: 1rem;
-  background-image: radial-gradient(circle at 12.52% 50%, #002a79 0, #001431 50%, #000000 100%);
   color: #fff;
+  background-color:rgba(0, 0, 0,0.96);
   opacity: 0;
   pointer-events: none;
   transition: all 0.5s ease-in-out;
 }
+
+.portfolio-card .portfolio-card-info h3{
+  font-size: 1.5rem;
+
+}
+.portfolio-card .portfolio-card-info p{
+  font-size: 1.18rem;
+
+}
+
+
+
 .portfolio-card .portfolio-card-info div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 0.6rem;
   border: thin solid #fff;
   width: 100%;
   height: 100%;
